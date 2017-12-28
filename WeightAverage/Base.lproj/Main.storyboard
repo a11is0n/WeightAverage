@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,10 +35,10 @@
                                         <rect key="frame" x="20" y="135" width="335" height="579"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hst-9K-Mud" userLabel="TimeRangeContainer">
-                                                <rect key="frame" x="100.33333333333331" y="251.66666666666669" width="135" height="75"/>
+                                                <rect key="frame" x="100" y="252" width="135" height="75"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTb-2N-IF5" userLabel="RangeNumberLabel">
-                                                        <rect key="frame" x="0.0" y="-0.33333333333337123" width="75" height="75"/>
+                                                        <rect key="frame" x="0.0" y="-0.33333333333331439" width="75" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="75" id="IMu-zy-glE"/>
                                                             <constraint firstAttribute="height" constant="75" id="wWh-9p-fjA"/>
@@ -48,7 +48,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x7-p1-O2c" userLabel="DayText">
-                                                        <rect key="frame" x="85.000000000000014" y="19.333333333333314" width="49.999999999999986" height="35"/>
+                                                        <rect key="frame" x="85" y="20" width="50" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="Owj-rt-kK0"/>
                                                             <constraint firstAttribute="width" constant="50" id="ojo-sm-eJS"/>
@@ -68,9 +68,17 @@
                                                     <constraint firstAttribute="height" constant="75" id="wxH-YF-Uk3"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average in the last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-0T-GKN" userLabel="TimeRangeDescriptionText">
+                                                <rect key="frame" x="94.000000000000014" y="205.33333333333331" width="147.33333333333337" height="21.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="hst-9K-Mud" firstAttribute="top" secondItem="iB4-0T-GKN" secondAttribute="bottom" constant="25" id="51L-tA-U5F"/>
+                                            <constraint firstItem="iB4-0T-GKN" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="XKT-nl-WR8"/>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="fpU-Gh-DBC"/>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerY" secondItem="2yS-zw-AjQ" secondAttribute="centerY" id="hvh-xJ-gmz"/>
                                         </constraints>
@@ -125,12 +133,11 @@
                             <constraint firstItem="QUe-Pi-3Te" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yOD-Hd-qwN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="N2T-He-0ee"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="healthKitAvailableContainer" destination="QUe-Pi-3Te" id="73q-jW-Rlk"/>
+                        <outlet property="healthKitUnavailableContainer" destination="N2T-He-0ee" id="LQc-Rx-T62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
