@@ -10,12 +10,13 @@ import HealthKit
 import UIKit
 
 class ViewController: UIViewController {
-    
     // MARK: Properties
     
     @IBOutlet weak var healthKitAvailableContainer: UIView!
     @IBOutlet weak var healthKitUnavailableContainer: UIView!
+    @IBOutlet weak var timeRangeDaysLabel: UILabel!
     
+    let defaultTimeRangeDays = 30
     let healthManager = HealthManager()
     
     // MARK: Functions
@@ -25,15 +26,16 @@ class ViewController: UIViewController {
         
         setUp()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func setUp() {
         healthKitAvailableContainer.isHidden = !healthManager.isHealthDataAvailable()
         healthKitUnavailableContainer.isHidden = healthManager.isHealthDataAvailable()
+        
+        if !healthManager.isHealthDataAvailable() {
+            return
+        }
+        
+        timeRangeDaysLabel.text = String(healthManager.timeRangeDays())
     }
 
 }

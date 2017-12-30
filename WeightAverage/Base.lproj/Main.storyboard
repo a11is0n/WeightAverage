@@ -133,10 +133,16 @@
                             <constraint firstItem="QUe-Pi-3Te" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yOD-Hd-qwN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="N2T-He-0ee"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="healthKitAvailableContainer" destination="QUe-Pi-3Te" id="73q-jW-Rlk"/>
                         <outlet property="healthKitUnavailableContainer" destination="N2T-He-0ee" id="LQc-Rx-T62"/>
+                        <outlet property="timeRangeDaysLabel" destination="aTb-2N-IF5" id="XmO-nV-fAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
