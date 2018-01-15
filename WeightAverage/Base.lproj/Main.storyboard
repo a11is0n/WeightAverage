@@ -31,14 +31,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-zw-AjQ" userLabel="WeightDescriptionContainer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-zw-AjQ" userLabel="PermissionsAvailableContainer">
                                         <rect key="frame" x="20" y="135" width="335" height="579"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hst-9K-Mud" userLabel="TimeRangeContainer">
-                                                <rect key="frame" x="100" y="252" width="135" height="75"/>
+                                                <rect key="frame" x="100" y="252.66666666666669" width="135" height="75"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTb-2N-IF5" userLabel="RangeNumberLabel">
-                                                        <rect key="frame" x="0.0" y="-0.33333333333331439" width="75" height="75"/>
+                                                        <rect key="frame" x="0.0" y="-0.66666666666668561" width="75" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="75" id="IMu-zy-glE"/>
                                                             <constraint firstAttribute="height" constant="75" id="wWh-9p-fjA"/>
@@ -69,7 +69,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average in the last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-0T-GKN" userLabel="TimeRangeDescriptionText">
-                                                <rect key="frame" x="94.000000000000014" y="205.33333333333331" width="147.33333333333337" height="21.666666666666657"/>
+                                                <rect key="frame" x="93.999999999999986" y="205.66666666666669" width="147.66666666666663" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -83,21 +83,51 @@
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerY" secondItem="2yS-zw-AjQ" secondAttribute="centerY" id="hvh-xJ-gmz"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52T-Ht-d4n" userLabel="PermissionsUnavailableContainer">
+                                        <rect key="frame" x="20" y="135" width="335" height="579"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No permissions to pull weight data - please adjust permissions in the Settings app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xt-pC-5eY" userLabel="NoPermissionsText">
+                                                <rect key="frame" x="17" y="239.66666666666669" width="300" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="eyZ-dS-aDB"/>
+                                                    <constraint firstAttribute="width" constant="300" id="ncb-CU-Mbg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="2Xt-pC-5eY" firstAttribute="centerY" secondItem="52T-Ht-d4n" secondAttribute="centerY" id="2xC-ye-Jig"/>
+                                            <constraint firstItem="2Xt-pC-5eY" firstAttribute="centerX" secondItem="52T-Ht-d4n" secondAttribute="centerX" id="OIa-2U-C65"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="5bA-fz-Qqu"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstItem="QPV-4o-aHW" firstAttribute="bottom" secondItem="52T-Ht-d4n" secondAttribute="bottom" constant="20" id="EWD-aS-kqf"/>
                                     <constraint firstItem="2yS-zw-AjQ" firstAttribute="top" secondItem="QoL-bh-cBQ" secondAttribute="bottom" constant="20" id="FXd-5C-syb"/>
+                                    <constraint firstItem="52T-Ht-d4n" firstAttribute="top" secondItem="QoL-bh-cBQ" secondAttribute="bottom" constant="20" id="IHd-bH-1wm"/>
                                     <constraint firstAttribute="trailing" secondItem="QoL-bh-cBQ" secondAttribute="trailing" constant="20" id="R16-5N-qmW"/>
+                                    <constraint firstItem="52T-Ht-d4n" firstAttribute="leading" secondItem="QPV-4o-aHW" secondAttribute="leading" constant="20" id="Rn3-aP-vKd"/>
                                     <constraint firstItem="QPV-4o-aHW" firstAttribute="trailing" secondItem="2yS-zw-AjQ" secondAttribute="trailing" constant="20" id="XEl-j7-Ewm"/>
+                                    <constraint firstItem="QPV-4o-aHW" firstAttribute="trailing" secondItem="52T-Ht-d4n" secondAttribute="trailing" constant="20" id="eR8-cs-VVa"/>
                                     <constraint firstItem="QPV-4o-aHW" firstAttribute="bottom" secondItem="2yS-zw-AjQ" secondAttribute="bottom" constant="20" id="i7D-4R-9ZT"/>
                                     <constraint firstItem="2yS-zw-AjQ" firstAttribute="leading" secondItem="QPV-4o-aHW" secondAttribute="leading" constant="20" id="jab-vf-Lws"/>
                                     <constraint firstItem="QoL-bh-cBQ" firstAttribute="top" secondItem="QPV-4o-aHW" secondAttribute="top" constant="40" id="lqs-9c-B8s"/>
                                     <constraint firstItem="QoL-bh-cBQ" firstAttribute="leading" secondItem="QUe-Pi-3Te" secondAttribute="leading" constant="20" id="uHh-Hf-2lf"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="QPV-4o-aHW"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="52T-Ht-d4n"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-He-0ee" userLabel="HealthKitUnavailableContainer">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
@@ -142,7 +172,9 @@
                     <connections>
                         <outlet property="healthKitAvailableContainer" destination="QUe-Pi-3Te" id="73q-jW-Rlk"/>
                         <outlet property="healthKitUnavailableContainer" destination="N2T-He-0ee" id="LQc-Rx-T62"/>
-                        <outlet property="timeRangeDaysLabel" destination="aTb-2N-IF5" id="XmO-nV-fAw"/>
+                        <outlet property="permissionsAvailableContainer" destination="2yS-zw-AjQ" id="Eim-1I-6ao"/>
+                        <outlet property="permissionsUnavailableContainer" destination="52T-Ht-d4n" id="kBc-Vg-vqL"/>
+                        <outlet property="timeRangeDaysLabel" destination="aTb-2N-IF5" id="1uy-5H-XuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

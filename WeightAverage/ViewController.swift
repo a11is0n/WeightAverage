@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var healthKitAvailableContainer: UIView!
     @IBOutlet weak var healthKitUnavailableContainer: UIView!
+    @IBOutlet weak var permissionsAvailableContainer: UIView!
+    @IBOutlet weak var permissionsUnavailableContainer: UIView!
     @IBOutlet weak var timeRangeDaysLabel: UILabel!
     
     let defaultTimeRangeDays = 30
@@ -34,6 +36,8 @@ class ViewController: UIViewController {
         if !healthManager.isHealthDataAvailable() {
             return
         }
+        
+        healthManager.requestPermissions()
         
         timeRangeDaysLabel.text = String(healthManager.timeRangeDays())
     }

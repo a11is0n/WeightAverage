@@ -41,5 +41,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This apps calculates your recent average weight</string>
 </dict>
 </plist>
