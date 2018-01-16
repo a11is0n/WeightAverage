@@ -34,6 +34,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-zw-AjQ" userLabel="PermissionsAvailableContainer">
                                         <rect key="frame" x="20" y="135" width="335" height="579"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average in the last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-0T-GKN" userLabel="TimeRangeDescriptionText">
+                                                <rect key="frame" x="92.999999999999986" y="205" width="147.66666666666663" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hst-9K-Mud" userLabel="TimeRangeContainer">
                                                 <rect key="frame" x="100" y="252.66666666666669" width="135" height="75"/>
                                                 <subviews>
@@ -68,19 +74,49 @@
                                                     <constraint firstAttribute="height" constant="75" id="wxH-YF-Uk3"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average in the last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-0T-GKN" userLabel="TimeRangeDescriptionText">
-                                                <rect key="frame" x="93.999999999999986" y="205.66666666666669" width="147.66666666666663" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tD3-NF-teX" userLabel="WeightDataContainer">
+                                                <rect key="frame" x="47" y="60" width="240" height="120"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asM-Pg-GJM" userLabel="AverageWeightLabel">
+                                                        <rect key="frame" x="10" y="10.666666666666657" width="100" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="7mR-Jo-XFu"/>
+                                                            <constraint firstAttribute="width" constant="100" id="YpL-IU-dPV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNIT GOES HERE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPJ-Bf-XT5" userLabel="WeightUnitLabel">
+                                                        <rect key="frame" x="130.33333333333334" y="34.666666666666686" width="100" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="KAE-Hr-6ZR"/>
+                                                            <constraint firstAttribute="width" constant="100" id="RXb-29-7XG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="asM-Pg-GJM" firstAttribute="centerX" secondItem="tD3-NF-teX" secondAttribute="centerX" constant="-60" id="K3c-jr-EJr"/>
+                                                    <constraint firstAttribute="width" constant="240" id="KiR-zF-zO1"/>
+                                                    <constraint firstAttribute="height" constant="120" id="WMk-43-29S"/>
+                                                    <constraint firstItem="asM-Pg-GJM" firstAttribute="centerY" secondItem="tD3-NF-teX" secondAttribute="centerY" id="WeS-f3-VOT"/>
+                                                    <constraint firstItem="jPJ-Bf-XT5" firstAttribute="centerX" secondItem="tD3-NF-teX" secondAttribute="centerX" constant="60" id="fjw-Lx-1Nq"/>
+                                                    <constraint firstItem="jPJ-Bf-XT5" firstAttribute="centerY" secondItem="tD3-NF-teX" secondAttribute="centerY" id="p9O-Dj-763"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="top" secondItem="iB4-0T-GKN" secondAttribute="bottom" constant="25" id="51L-tA-U5F"/>
+                                            <constraint firstItem="tD3-NF-teX" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="8D2-mu-AY8"/>
                                             <constraint firstItem="iB4-0T-GKN" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="XKT-nl-WR8"/>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="fpU-Gh-DBC"/>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerY" secondItem="2yS-zw-AjQ" secondAttribute="centerY" id="hvh-xJ-gmz"/>
+                                            <constraint firstItem="iB4-0T-GKN" firstAttribute="top" secondItem="tD3-NF-teX" secondAttribute="bottom" constant="25" id="vbQ-LH-hZ8"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52T-Ht-d4n" userLabel="PermissionsUnavailableContainer">
@@ -170,6 +206,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="averageWeightLabel" destination="asM-Pg-GJM" id="GoM-dv-dUh"/>
                         <outlet property="healthKitAvailableContainer" destination="QUe-Pi-3Te" id="73q-jW-Rlk"/>
                         <outlet property="healthKitUnavailableContainer" destination="N2T-He-0ee" id="LQc-Rx-T62"/>
                         <outlet property="permissionsAvailableContainer" destination="2yS-zw-AjQ" id="Eim-1I-6ao"/>

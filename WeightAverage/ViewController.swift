@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var healthKitUnavailableContainer: UIView!
     @IBOutlet weak var permissionsAvailableContainer: UIView!
     @IBOutlet weak var permissionsUnavailableContainer: UIView!
+    @IBOutlet weak var averageWeightLabel : UILabel!
     @IBOutlet weak var timeRangeDaysLabel: UILabel!
     
     let defaultTimeRangeDays = 30
     let healthManager = HealthManager()
     
-    // MARK: Functions
+    // MARK: Public Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,24 @@ class ViewController: UIViewController {
         setUp()
     }
     
-    func setUp() {
+    // MARK: Private Functions
+    
+    deinit {
+        removeObservers()
+    }
+    
+    private func addObservers() {
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: HealthManager.HealthManagerNotificationKeys.weightAverageAvailable),
+                                               object: nil,
+                                               queue: nil,
+                                               using: handleWeightAverageAvailable)
+    }
+    
+    private func removeObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func setUp() {
         healthKitAvailableContainer.isHidden = !healthManager.isHealthDataAvailable()
         healthKitUnavailableContainer.isHidden = healthManager.isHealthDataAvailable()
         
@@ -37,9 +55,19 @@ class ViewController: UIViewController {
             return
         }
         
+        addObservers()
+        
         healthManager.requestPermissions()
         
         timeRangeDaysLabel.text = String(healthManager.timeRangeDays())
     }
-
+    
+    private func handleWeightAverageAvailable(notification: Notification) {
+        var averageWeight = 0.0
+        if notification.userInfo?["averageWeight"] != nil {
+            averageWeight = notification.userInfo?["averageWeight"] as! Double
+        }
+        
+        averageWeightLabel.text = String(format: "%.2f", averageWeight)
+    }
 }

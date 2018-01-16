@@ -11,7 +11,7 @@ import HealthKit
 class HealthManager {
     // MARK: Constants
     struct HealthManagerNotificationKeys {
-        static let weightDataAvailable = "weightDataAvailable"
+        static let weightAverageAvailable = "weightAverageAvailable"
     }
     
     private struct HealthManagerConstants {
@@ -85,7 +85,8 @@ class HealthManager {
         
         averageWeight = weightSum / Double(data.count)
         
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: HealthManagerNotificationKeys.weightDataAvailable),
-                                        object: averageWeight)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: HealthManagerNotificationKeys.weightAverageAvailable),
+                                        object: self,
+                                        userInfo: ["averageWeight": averageWeight])
     }
 }
