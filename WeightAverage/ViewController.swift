@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var averageWeightLabel : UILabel!
     @IBOutlet weak var timeRangeDaysLabel: UILabel!
     
-    let defaultTimeRangeDays = 30
-    let healthManager = HealthManager()
+    private let defaultTimeRangeDays = 30
+    private let healthManager = HealthManager()
     
     // MARK: Public Functions
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp()
@@ -37,6 +37,10 @@ class ViewController: UIViewController {
     }
     
     private func addObservers() {
+        NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive,
+                                               object: nil,
+                                               queue: nil,
+                                               using: handleBecomeActive)
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: HealthManager.HealthManagerNotificationKeys.dataNotFound),
                                                object: nil,
                                                queue: nil,
@@ -61,9 +65,13 @@ class ViewController: UIViewController {
         
         addObservers()
         
-        healthManager.requestPermissions()
+        healthManager.handleBecomeActive()
         
         timeRangeDaysLabel.text = String(healthManager.timeRangeDays())
+    }
+    
+    private func handleBecomeActive(notification: Notification) {
+        healthManager.handleBecomeActive()
     }
     
     private func toggleDataFoundContainers(found: Bool) {
@@ -78,11 +86,6 @@ class ViewController: UIViewController {
     private func handleWeightAverageAvailable(notification: Notification) {
         toggleDataFoundContainers(found: true)
 
-        var averageWeight = 0.0
-        if notification.userInfo?["averageWeight"] != nil {
-            averageWeight = notification.userInfo?["averageWeight"] as! Double
-        }
-        
-        averageWeightLabel.text = String(format: "%.2f", averageWeight)
+        averageWeightLabel.text = String(format: "%.2f", healthManager.averageWeight)
     }
 }
