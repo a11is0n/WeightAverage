@@ -31,7 +31,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-zw-AjQ" userLabel="PermissionsAvailableContainer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-zw-AjQ" userLabel="DataFoundContainer">
                                         <rect key="frame" x="20" y="135" width="335" height="579"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average in the last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-0T-GKN" userLabel="TimeRangeDescriptionText">
@@ -119,10 +119,10 @@
                                             <constraint firstItem="iB4-0T-GKN" firstAttribute="top" secondItem="tD3-NF-teX" secondAttribute="bottom" constant="25" id="vbQ-LH-hZ8"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52T-Ht-d4n" userLabel="PermissionsUnavailableContainer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52T-Ht-d4n" userLabel="DataNotFoundContainer">
                                         <rect key="frame" x="20" y="135" width="335" height="579"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No permissions to pull weight data - please adjust permissions in the Settings app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xt-pC-5eY" userLabel="NoPermissionsText">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found - please check permissions in the Settings app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xt-pC-5eY" userLabel="NoDataText">
                                                 <rect key="frame" x="17" y="239.66666666666669" width="300" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="eyZ-dS-aDB"/>
@@ -159,11 +159,6 @@
                                     <constraint firstItem="QoL-bh-cBQ" firstAttribute="leading" secondItem="QUe-Pi-3Te" secondAttribute="leading" constant="20" id="uHh-Hf-2lf"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="QPV-4o-aHW"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="52T-Ht-d4n"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-He-0ee" userLabel="HealthKitUnavailableContainer">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
@@ -207,10 +202,10 @@
                     </view>
                     <connections>
                         <outlet property="averageWeightLabel" destination="asM-Pg-GJM" id="GoM-dv-dUh"/>
+                        <outlet property="dataFoundContainer" destination="2yS-zw-AjQ" id="buN-GV-mo3"/>
+                        <outlet property="dataNotFoundContainer" destination="52T-Ht-d4n" id="Mmn-Al-7FB"/>
                         <outlet property="healthKitAvailableContainer" destination="QUe-Pi-3Te" id="73q-jW-Rlk"/>
                         <outlet property="healthKitUnavailableContainer" destination="N2T-He-0ee" id="LQc-Rx-T62"/>
-                        <outlet property="permissionsAvailableContainer" destination="2yS-zw-AjQ" id="Eim-1I-6ao"/>
-                        <outlet property="permissionsUnavailableContainer" destination="52T-Ht-d4n" id="kBc-Vg-vqL"/>
                         <outlet property="timeRangeDaysLabel" destination="aTb-2N-IF5" id="1uy-5H-XuL"/>
                     </connections>
                 </viewController>

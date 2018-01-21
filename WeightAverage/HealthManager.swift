@@ -11,6 +11,7 @@ import HealthKit
 class HealthManager {
     // MARK: Constants
     struct HealthManagerNotificationKeys {
+        static let dataNotFound = "dataNotFound"
         static let weightAverageAvailable = "weightAverageAvailable"
     }
     
@@ -38,8 +39,8 @@ class HealthManager {
             if success {
                 self.fetchWeightData()
             } else {
-                // TODO: change UI if error
-                print("Authorization error: \(String(describing: error?.localizedDescription))")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: HealthManagerNotificationKeys.dataNotFound),
+                                                object: self)
             }
         })
         

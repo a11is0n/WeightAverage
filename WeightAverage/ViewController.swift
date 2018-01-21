@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var healthKitAvailableContainer: UIView!
     @IBOutlet weak var healthKitUnavailableContainer: UIView!
-    @IBOutlet weak var permissionsAvailableContainer: UIView!
-    @IBOutlet weak var permissionsUnavailableContainer: UIView!
+    @IBOutlet weak var dataFoundContainer: UIView!
+    @IBOutlet weak var dataNotFoundContainer: UIView!
     @IBOutlet weak var averageWeightLabel : UILabel!
     @IBOutlet weak var timeRangeDaysLabel: UILabel!
     
@@ -37,6 +37,10 @@ class ViewController: UIViewController {
     }
     
     private func addObservers() {
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: HealthManager.HealthManagerNotificationKeys.dataNotFound),
+                                               object: nil,
+                                               queue: nil,
+                                               using: handleDataNotFound)
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: HealthManager.HealthManagerNotificationKeys.weightAverageAvailable),
                                                object: nil,
                                                queue: nil,
@@ -62,7 +66,18 @@ class ViewController: UIViewController {
         timeRangeDaysLabel.text = String(healthManager.timeRangeDays())
     }
     
+    private func toggleDataFoundContainers(found: Bool) {
+        dataFoundContainer.isHidden = !found;
+        dataNotFoundContainer.isHidden = found;
+    }
+    
+    private func handleDataNotFound(notification: Notification) {
+        toggleDataFoundContainers(found: false)
+    }
+    
     private func handleWeightAverageAvailable(notification: Notification) {
+        toggleDataFoundContainers(found: true)
+
         var averageWeight = 0.0
         if notification.userInfo?["averageWeight"] != nil {
             averageWeight = notification.userInfo?["averageWeight"] as! Double
