@@ -20,16 +20,17 @@ class HealthManager {
     
     public struct HealthManagerNotificationKeys {
         static let dataNotFound = "dataNotFound"
+        static let weightUnitAvailable = "weightUnitAvailable"
         static let weightAverageAvailable = "weightAverageAvailable"
     }
     
     // MARK: Private Properties
     
     private let healthStore = HKHealthStore()
-    private var weightUnit = HKUnit.pound() // TODO: get unit from health kit
     
     // MARK: Public Properties
     
+    private (set) public var weightUnit = HKUnit.pound()
     private (set) public var averageWeight = 0.0
     
     // MARK: Private functions
@@ -53,7 +54,26 @@ class HealthManager {
     }
     
     private func fetchData() {
-        fetchWeightData()
+        fetchWeightUnit()
+    }
+    
+    private func fetchWeightUnit() {
+        let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+        healthStore.preferredUnits(for: [quantityType]) { (unit, error) in
+            if let weightUnit = unit[quantityType] {
+                DispatchQueue.main.async(execute: {
+                    self.weightUnit = weightUnit
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: HealthManagerNotificationKeys.weightUnitAvailable),
+                                                    object: self)
+                    
+                    self.fetchWeightData()
+                })
+            } else {
+                DispatchQueue.main.async(execute: {
+                    self.sendDataNotFoundNotification()
+                })
+            }
+        }
     }
     
     private func fetchWeightData() {
