@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dataFoundContainer: UIView!
     @IBOutlet weak var dataNotFoundContainer: UIView!
     @IBOutlet weak var averageWeightLabel : UILabel!
+    @IBOutlet weak var weightUnitLabel: UILabel!
     @IBOutlet weak var timeRangeDaysLabel: UILabel!
     
     private let defaultTimeRangeDays = 30
@@ -45,6 +46,10 @@ class ViewController: UIViewController {
                                                object: nil,
                                                queue: nil,
                                                using: handleDataNotFound)
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: HealthManager.HealthManagerNotificationKeys.weightUnitAvailable),
+                                               object: nil,
+                                               queue: nil,
+                                               using: handleWeightUnitAvailable)
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: HealthManager.HealthManagerNotificationKeys.weightAverageAvailable),
                                                object: nil,
                                                queue: nil,
@@ -81,6 +86,12 @@ class ViewController: UIViewController {
     
     private func handleDataNotFound(notification: Notification) {
         toggleDataFoundContainers(found: false)
+    }
+    
+    private func handleWeightUnitAvailable(notification: Notification) {
+        toggleDataFoundContainers(found: true)
+        
+        weightUnitLabel.text = String(format: "%@", healthManager.weightUnit)
     }
     
     private func handleWeightAverageAvailable(notification: Notification) {
