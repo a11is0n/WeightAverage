@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeightAverage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-Pi-3Te" userLabel="HealthKitAvailableContainer">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight Average" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoL-bh-cBQ" userLabel="Title">
                                         <rect key="frame" x="20" y="40" width="335" height="75"/>
@@ -32,13 +32,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yS-zw-AjQ" userLabel="DataFoundContainer">
-                                        <rect key="frame" x="20" y="135" width="335" height="579"/>
+                                        <rect key="frame" x="20" y="135" width="335" height="492"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tD3-NF-teX" userLabel="WeightDataContainer">
-                                                <rect key="frame" x="17" y="60" width="300" height="120"/>
+                                                <rect key="frame" x="17" y="16.5" width="300" height="120"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asM-Pg-GJM" userLabel="AverageWeightLabel">
-                                                        <rect key="frame" x="20" y="10.666666666666657" width="200" height="100"/>
+                                                        <rect key="frame" x="20" y="10.5" width="200" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="7mR-Jo-XFu"/>
                                                             <constraint firstAttribute="width" constant="200" id="YpL-IU-dPV"/>
@@ -69,16 +69,16 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average in the last" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB4-0T-GKN" userLabel="TimeRangeDescriptionText">
-                                                <rect key="frame" x="92.999999999999986" y="205" width="147.66666666666663" height="22"/>
+                                                <rect key="frame" x="93" y="161.5" width="148" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hst-9K-Mud" userLabel="TimeRangeContainer">
-                                                <rect key="frame" x="100" y="252.66666666666669" width="135" height="75"/>
+                                                <rect key="frame" x="100" y="209" width="135" height="75"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTb-2N-IF5" userLabel="RangeNumberLabel">
-                                                        <rect key="frame" x="0.0" y="-0.66666666666668561" width="75" height="75"/>
+                                                        <rect key="frame" x="0.0" y="-0.5" width="75" height="75"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="75" id="IMu-zy-glE"/>
                                                             <constraint firstAttribute="height" constant="75" id="wWh-9p-fjA"/>
@@ -108,11 +108,18 @@
                                                     <constraint firstAttribute="height" constant="75" id="wxH-YF-Uk3"/>
                                                 </constraints>
                                             </view>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRF-Pn-EPJ" userLabel="TimeRangePicker">
+                                                <rect key="frame" x="0.0" y="284" width="335" height="208"/>
+                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="top" secondItem="iB4-0T-GKN" secondAttribute="bottom" constant="25" id="51L-tA-U5F"/>
                                             <constraint firstItem="tD3-NF-teX" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="8D2-mu-AY8"/>
+                                            <constraint firstItem="iRF-Pn-EPJ" firstAttribute="leading" secondItem="2yS-zw-AjQ" secondAttribute="leading" id="A7k-MT-Uyu"/>
+                                            <constraint firstItem="iRF-Pn-EPJ" firstAttribute="top" secondItem="hst-9K-Mud" secondAttribute="bottom" id="WKr-ra-mqb"/>
+                                            <constraint firstAttribute="trailing" secondItem="iRF-Pn-EPJ" secondAttribute="trailing" id="X0p-JI-Z9K"/>
+                                            <constraint firstAttribute="bottom" secondItem="iRF-Pn-EPJ" secondAttribute="bottom" id="X23-E7-zwO"/>
                                             <constraint firstItem="iB4-0T-GKN" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="XKT-nl-WR8"/>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerX" secondItem="2yS-zw-AjQ" secondAttribute="centerX" id="fpU-Gh-DBC"/>
                                             <constraint firstItem="hst-9K-Mud" firstAttribute="centerY" secondItem="2yS-zw-AjQ" secondAttribute="centerY" id="hvh-xJ-gmz"/>
@@ -212,6 +219,7 @@
                         <outlet property="healthKitAvailableContainer" destination="QUe-Pi-3Te" id="73q-jW-Rlk"/>
                         <outlet property="healthKitUnavailableContainer" destination="N2T-He-0ee" id="LQc-Rx-T62"/>
                         <outlet property="timeRangeDaysLabel" destination="aTb-2N-IF5" id="1uy-5H-XuL"/>
+                        <outlet property="timeRangePicker" destination="iRF-Pn-EPJ" id="Vrn-pI-g4Y"/>
                         <outlet property="weightUnitLabel" destination="jPJ-Bf-XT5" id="APW-gP-dsX"/>
                     </connections>
                 </viewController>

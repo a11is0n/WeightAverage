@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var averageWeightLabel : UILabel!
     @IBOutlet weak var weightUnitLabel: UILabel!
     @IBOutlet weak var timeRangeDaysLabel: UILabel!
+    @IBOutlet weak var timeRangePicker: UIPickerView!
     
     private let defaultTimeRangeDays = 30
     private let healthManager = HealthManager()
