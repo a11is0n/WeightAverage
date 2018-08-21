@@ -9,7 +9,7 @@
 import HealthKit
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     // MARK: Properties
     
     @IBOutlet weak var healthKitAvailableContainer: UIView!
@@ -65,6 +65,9 @@ class ViewController: UIViewController {
         healthKitAvailableContainer.isHidden = !healthManager.isHealthDataAvailable()
         healthKitUnavailableContainer.isHidden = healthManager.isHealthDataAvailable()
         
+        timeRangePicker.dataSource = self
+        timeRangePicker.delegate = self
+        
         if !healthManager.isHealthDataAvailable() {
             return
         }
@@ -99,5 +102,25 @@ class ViewController: UIViewController {
         toggleDataFoundContainers(found: true)
 
         averageWeightLabel.text = String(format: "%.2f", healthManager.averageWeight)
+    }
+    
+    // MARK: UIPickerViewDataSource Functions
+    
+    internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2 // TODO
+    }
+    
+    internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3 // TODO
+    }
+    
+    // MARK: UIPickerViewDelegate Functions
+    
+    internal func pickerView(_ pickerView: UIPickerView, titleForRow: Int, forComponent: Int) -> String? {
+        return "TODO" // TODO
+    }
+    
+    internal func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
+        // TODO
     }
 }
