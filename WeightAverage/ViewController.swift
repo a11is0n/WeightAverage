@@ -107,20 +107,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // MARK: UIPickerViewDataSource Functions
     
     internal func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2 // TODO
+        return healthManager.timeRangePickerComponentCount()
     }
     
     internal func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3 // TODO
+        return healthManager.timeRangePickerRowsInComponent(component: component)
     }
     
     // MARK: UIPickerViewDelegate Functions
     
     internal func pickerView(_ pickerView: UIPickerView, titleForRow: Int, forComponent: Int) -> String? {
-        return "TODO" // TODO
+        return healthManager.textForComponentRow(component: forComponent, row: titleForRow)
     }
     
     internal func pickerView(_ pickerView: UIPickerView, didSelectRow: Int, inComponent: Int) {
-        // TODO
+        NSLog("Component %d row %d selected", inComponent, didSelectRow)
     }
 }

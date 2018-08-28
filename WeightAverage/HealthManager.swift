@@ -14,6 +14,8 @@ class HealthManager {
     private struct HealthManagerConstants {
         static let selectedTimeRangeDaysKey = "selectedTimeRangeDays"
         static let defaultTimeRangeDays = 30
+        static let timeRangePickerDays = [1, 2, 3, 4, 5, 6, 7, 14, 21, 30, 60, 90, 120, 180, 360, 720, 1080]
+        static let timeRangePickerDayLabel = "Days"
     }
 
     // MARK: Public Constants
@@ -79,7 +81,7 @@ class HealthManager {
     private func fetchWeightData() {
         let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
         let endDate = Date()
-        let startDate = Calendar.current.date(byAdding: .day, value: -30, to: endDate)
+        let startDate = Calendar.current.date(byAdding: .day, value: -self.timeRangeDays(), to: endDate)
         
         let predicate = HKQuery.predicateForSamples(withStart: startDate,
                                                     end: endDate,
@@ -120,5 +122,25 @@ class HealthManager {
         }
         
         return timeRangeDays
+    }
+    
+    public func timeRangePickerComponentCount() -> Int {
+        return 2
+    }
+    
+    public func timeRangePickerRowsInComponent(component: Int) -> Int {
+        if (component == 0) {
+            return HealthManagerConstants.timeRangePickerDays.count
+        } else {
+            return 1
+        }
+    }
+    
+    public func textForComponentRow(component: Int, row: Int) -> String {
+        if (component == 0) {
+            return String(HealthManagerConstants.timeRangePickerDays[row])
+        } else {
+            return HealthManagerConstants.timeRangePickerDayLabel
+        }
     }
 }
