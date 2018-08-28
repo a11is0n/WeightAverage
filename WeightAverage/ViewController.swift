@@ -84,8 +84,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     private func toggleDataFoundContainers(found: Bool) {
-        dataFoundContainer.isHidden = !found;
-        dataNotFoundContainer.isHidden = found;
+        dataFoundContainer.isHidden = !found
+        dataNotFoundContainer.isHidden = found
     }
     
     private func handleDataNotFound(notification: Notification) {
