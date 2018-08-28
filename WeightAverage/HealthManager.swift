@@ -33,7 +33,7 @@ class HealthManager {
     private (set) public var weightUnit = HKUnit.pound()
     private (set) public var averageWeight = 0.0
     
-    // MARK: Private functions
+    // MARK: Private Functions
     
     private func requestPermissions() {
         let readDataTypes : Set = [HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!]
